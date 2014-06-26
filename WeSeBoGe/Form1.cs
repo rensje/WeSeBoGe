@@ -20,8 +20,12 @@ namespace WeSeBoGe
         private void newItem_Click(object sender, EventArgs e)
         {
             String s = Prompt.ShowDialog("Enter a name", "Name");
-            this.Hide();
-            new BookForm(s).Show();
+            if (!(s == null))
+            {
+                this.Hide();
+                new BookForm(s).Show();
+            }
+            
         }
     }
 }

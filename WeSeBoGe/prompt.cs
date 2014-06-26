@@ -18,12 +18,17 @@ namespace WeSeBoGe
             Label textLabel = new Label() { Left = 50, Top = 20, Text = text };
             TextBox inputBox = new TextBox() { Left = 50, Top = 50, Width = 400 };
             Button confirmation = new Button() { Text = "Ok", Left = 350, Width = 100, Top = 70 };
-            confirmation.Click += (sender, e) => { prompt.Close(); };
+            confirmation.DialogResult = DialogResult.OK;
             prompt.Controls.Add(confirmation);
             prompt.Controls.Add(textLabel);
             prompt.Controls.Add(inputBox);
             prompt.ShowDialog();
-            return inputBox.Text;
+
+            if (prompt.DialogResult == DialogResult.OK)
+            {
+                return inputBox.Text;
+            }
+            else { prompt.Dispose(); return null; }
         }
     }
 }

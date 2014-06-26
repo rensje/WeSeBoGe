@@ -15,6 +15,7 @@ namespace WeSeBoGe
         public BookForm(String name)
         {
             InitializeComponent();
+            this.Text = name;
         }
     }
 }
