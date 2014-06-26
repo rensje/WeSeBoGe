@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace WeSeBoGe
 {
-    public partial class Form1 : Form
+    public partial class BookForm : Form
     {
-        public Form1()
+        public BookForm(String name)
         {
             InitializeComponent();
-        }
-
-        private void newItem_Click(object sender, EventArgs e)
-        {
-            String s = Prompt.ShowDialog("Enter a name", "Name");
-            this.Hide();
-            new BookForm(s).Show();
         }
     }
 }
